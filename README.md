@@ -5,4 +5,4 @@ Date from WSL Institute for Snow and Avalanche Research SLF, accessed 25 March 2
 
 http://www.slf.ch/
 
-Explanatory blog post on geovisualist.com
+Explanatory blog post on http://geovisualist.com
