@@ -1,3 +1,4 @@
+#radial scatter plot published in plotly using plotly R API
 library(plotly)
 library(ggplot2)
 
@@ -10,5 +11,5 @@ p <- plot_ly(plotly::hobbs, r = df$Elevation..m., t = df$degjit, color = df$acti
 layout(title = "Fatal Swiss avalanches 1995 - 2016: Slope aspect, elevation, and activity",
        orientation = 270, radialaxis = list(ticksuffix = "m", orientation = -40))
 p
-#plotly_POST(p, filename = "av_scatter")
+plotly_POST(p, filename = "av_scatter")
 

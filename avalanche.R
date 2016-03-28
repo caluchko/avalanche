@@ -1,3 +1,5 @@
+# processing SLF dataset and creating new columns for month, number of fatalities,
+# aspect (degrees), jittered aspect, and activity (names)
 library(dplyr)
 
 df <- read.csv("avalanche.csv")
@@ -8,6 +10,7 @@ df$mon <- months(df$Date)
 df$mon <- factor(df$mon, levels = c("December","January", "February", "March", "April", "May", 
                                     "June","July", "August", "September", "October", "November"))
 df <- mutate(df, Fatalities = as.integer(substr(Victims..caught..buried.,1,1))) %>%
+  #above only works with fatalities < 9. Need to write regex.    
       mutate(deg = ifelse(Aspect == "N", 0, 
                        ifelse(Aspect == "NNE", 22.5, 
                        ifelse(Aspect == "NE", 45,
